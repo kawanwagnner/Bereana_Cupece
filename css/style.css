@@ -162,8 +162,8 @@
     color: var(--bs-dark);
   }
 
-  .sticky-top.navbar-light .logo {
-    color: #000;
+  .logo {
+    color: #000 !important;
   }
 
   .navbar-light .navbar-brand img {
@@ -417,7 +417,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 20, 66, 0.7), rgba(0, 20, 66, 0.7)),
-    url(../img/breadcrumb.jpg);
+    url(../img/bg.png);
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
