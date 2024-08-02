@@ -516,7 +516,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 25px;
+  padding: 20px;
   font-size: 30px;
   font-weight: bold;
   background: #ff5c00;
@@ -926,4 +926,8 @@
 
 .i-logo {
   padding-top: -10px;
+}
+
+.border-primary-css {
+  color: #000;
 }
