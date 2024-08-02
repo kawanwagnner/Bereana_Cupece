@@ -931,3 +931,7 @@
 .border-primary-css {
   color: #000;
 }
+
+.dropdown-item.active {
+  background-color: #ff5e00d2 !important;
+}
