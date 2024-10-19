@@ -708,6 +708,46 @@
   color: #ff8945 !important;
 }
 
+@media (max-width: 991.9px) {
+  #carouselId2 .carousel-inner {
+    max-height: 50vh;
+  }
+
+  .blog-img2 {
+    display: none;
+  }
+
+  #carouselId2 .carousel-inner .carousel-item .container .row .content-text p {
+    margin-top: 30px;
+  }
+
+  #carouselId2 .carousel-inner .carousel-item .container .row .content-text p,
+  h6 {
+    text-align: center;
+  }
+
+  .carousel-control-prev-icon2,
+  .carousel-control-next-icon2 {
+    top: 3% !important;
+    transform: translateY(50%) !important;
+  }
+
+  .carousel-control-prev-icon2,
+  .carousel-control-next-icon2 {
+    padding: 30px 25px !important;
+  }
+
+  .carousel-control-prev-icon2 i {
+    left: 0%;
+  }
+
+  .carousel-control-prev-icon2 i,
+  .carousel-control-next-icon2 i {
+    position: absolute !important;
+    top: 10%;
+  }
+}
+
 /*** Blog End ***/
 
 /*** Team Start ***/
