@@ -1,26 +1,47 @@
-/* Estilo para as imagens pequenas em telas menores */
-.small-img {
-    width: 75%;
-    margin: 0 auto;
+body {
+    overflow-x: hidden;
 }
 
-/* Ajuste do padding para colunas */
-.carousel-item .content-text {
-    padding-left: 20px;
-    padding-right: 20px;
+.digital-bookshelf {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
 }
 
-@media (max-width: 576px) {
+.bookshelf-title {
+    font-size: 2.5rem;
+    color: #343a40;
+}
 
-    /* Reduz o tamanho da imagem no modo coluna (mobile) */
-    .small-img {
-        width: 50%;
-    }
+.shelf-book-card {
+    border: none;
+}
 
-    /* Textos alinhados para mobile, ocupando 100% */
-    .carousel-item .content-text {
-        text-align: center;
-        padding-left: 0;
-        padding-right: 0;
-    }
+.book-cover {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.book-title {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.book-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.buy-button {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
