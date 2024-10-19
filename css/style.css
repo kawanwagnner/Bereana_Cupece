@@ -12,6 +12,7 @@
   visibility: visible;
   opacity: 1;
 }
+
 /*** Spinner End ***/
 
 .back-to-top {
@@ -82,6 +83,7 @@
   background: #ff8945;
   border: 1px solid #ff8945;
 }
+
 /*** Topbar Start ***/
 
 /*** Navbar ***/
@@ -255,6 +257,7 @@
     display: none;
   }
 }
+
 /*** Carousel Hero Header Start ***/
 .carousel-header {
   position: relative;
@@ -401,6 +404,11 @@
   .carousel .carousel-control-next .carousel-control-next-icon {
     display: none;
   }
+
+  .carousel-control-prev-icon2,
+  .carousel-control-next-icon2 {
+    display: block !important;
+  }
 }
 
 .modal .modal-header {
@@ -410,6 +418,7 @@
 #searchModal .modal-content {
   background: rgba(255, 255, 255, 0.6);
 }
+
 /*** Carousel Hero Header End ***/
 
 /*** Single Page Hero Header Start ***/
@@ -438,6 +447,7 @@
     padding: 60px 0 60px 0;
   }
 }
+
 /*** Single Page Hero Header End ***/
 
 /*** Features Start ***/
@@ -480,6 +490,7 @@
 .feature .feature-item:hover a.btn:hover {
   color: #ff8945 !important;
 }
+
 /*** Features End ***/
 
 /*** About Start ***/
@@ -526,6 +537,7 @@
   margin-left: -30px;
   border-radius: 10px;
 }
+
 /*** About End ***/
 
 /*** Service Start ***/
@@ -594,6 +606,7 @@
   transform: rotate(360deg);
   color: #ff8945 !important;
 }
+
 /*** Service End ***/
 
 /*** Counter Start ***/
@@ -623,6 +636,7 @@
   align-items: center;
   justify-content: center;
 }
+
 /*** Counter End ***/
 
 /*** Products Start ***/
@@ -693,6 +707,7 @@
 .blog .blog-item:hover .blog-content a:hover {
   color: #ff8945 !important;
 }
+
 /*** Blog End ***/
 
 /*** Team Start ***/
@@ -707,6 +722,7 @@
 .team .team-item .team-inner {
   transition: 0.5s;
 }
+
 .team .team-item:hover .team-inner {
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
 }
@@ -761,6 +777,7 @@
 .team .team-item:hover .team-inner .team-img .team-icon {
   left: -25px;
 }
+
 /*** Team End ***/
 
 /*** testimonial Start ***/
@@ -859,6 +876,7 @@
     top: -30px;
   }
 }
+
 /*** testimonial End ***/
 
 /*** Footer Start ***/
@@ -893,6 +911,7 @@
 .footer .footer-item .footer-btn a:hover i {
   color: #ff8945 !important;
 }
+
 /*** Footer End ***/
 
 /*** copyright Start ***/
@@ -900,6 +919,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background: var(--bs-dark);
 }
+
 /*** copyright end ***/
 
 .text-primary-css {

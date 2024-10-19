@@ -1,431 +1,369 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <title>Blog - Bereana Cupecê</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <title>Blog - Bereana Cupecê</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
 
-    <!-- Icon Font Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
-  </head>
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-  <body>
-    <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div
-        class="spinner-border text-primary-css"
-        style="width: 3rem; height: 3rem"
-        role="status"
-      >
-        <span class="sr-only">Carregando...</span>
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary-css" style="width: 3rem; height: 3rem" role="status">
+      <span class="sr-only">Carregando...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Navbar & Hero Start -->
+  <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+      <a href="" class="navbar-brand p-0">
+        <h1 class="text-primary-css logo flex-fill align-content-end justify-content-lg-around">
+          <i class="i-logo"><img src="img/logo.png" alt="" /></i>Bereana
+        </h1>
+        <!-- <img src="img/logo.png" alt="Logo"> -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a href="index.html" class="nav-item nav-link">Início</a>
+          <a href="about.html" class="nav-item nav-link">Sobre</a>
+          <a href="service.html" class="nav-item nav-link">Serviços</a>
+          <a href="blog.html" class="nav-item nav-link active">Blog</a>
+          <div class="nav-item dropdown">
+            <a href="https://www.instagram.com/bereanacupece/" target="_blank" class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown">Páginas</a>
+            <div class="dropdown-menu m-0">
+              <a href="feature.html" class="dropdown-item">Nosso Lema</a>
+              <!-- <a href="product.html" class="dropdown-item">Our Product</a> -->
+              <a href="team.html" class="dropdown-item">Nossos Líderes</a>
+              <a href="testimonial.html" class="dropdown-item">Cometários</a>
+              <a href="404.html" class="dropdown-item">Página 404</a>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contato</a>
+        </div>
+        <div class="d-none d-xl-flex me-3">
+          <div class="d-flex flex-column pe-3 border-end border-primary-css">
+            <span class="text-body">Principal Rede</span>
+            <a href="https://www.instagram.com/bereanacupece/" target="_blank"><span class="text-primary-css">Instagram:
+                @bereanacupece</span></a>
+          </div>
+        </div>
+
+        <a href="" class="btn btn-primary-css rounded-pill d-inline-flex flex-shrink-0 py-2 px-4"><i
+            class="fa fa-location-arrow fa-1x"></i></a>
+      </div>
+    </nav>
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+      <div class="container text-center py-5" style="max-width: 900px">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">
+          Blog
+        </h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+          <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+          <li class="breadcrumb-item"><a href="#">Páginas</a></li>
+          <li class="breadcrumb-item active text-primary-css">
+            Novidades & Notícias
+          </li>
+        </ol>
       </div>
     </div>
-    <!-- Spinner End -->
+    <!-- Header End -->
+  </div>
+  <!-- Navbar & Hero End -->
 
-    <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0">
-      <nav
-        class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
-      >
-        <a href="" class="navbar-brand p-0">
-          <h1
-            class="text-primary-css logo flex-fill align-content-end justify-content-lg-around"
-          >
-            <i class="i-logo"><img src="img/logo.png" alt="" /></i>Bereana
-          </h1>
-          <!-- <img src="img/logo.png" alt="Logo"> -->
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span class="fa fa-bars"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto py-0">
-            <a href="index.html" class="nav-item nav-link">Início</a>
-            <a href="about.html" class="nav-item nav-link">Sobre</a>
-            <a href="service.html" class="nav-item nav-link">Serviços</a>
-            <a href="blog.html" class="nav-item nav-link active">Blog</a>
-            <div class="nav-item dropdown">
-              <a
-                href="https://www.instagram.com/bereanacupece/"
-                target="_blank"
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                >Páginas</a
-              >
-              <div class="dropdown-menu m-0">
-                <a href="feature.html" class="dropdown-item">Nosso Lema</a>
-                <!-- <a href="product.html" class="dropdown-item">Our Product</a> -->
-                <a href="team.html" class="dropdown-item">Nossos Líderes</a>
-                <a href="testimonial.html" class="dropdown-item">Cometários</a>
-                <a href="404.html" class="dropdown-item">Página 404</a>
-              </div>
-            </div>
-            <a href="contact.html" class="nav-item nav-link">Contato</a>
-          </div>
-          <div class="d-none d-xl-flex me-3">
-            <div class="d-flex flex-column pe-3 border-end border-primary-css">
-              <span class="text-body">Principal Rede</span>
-              <a href="https://www.instagram.com/bereanacupece/" target="_blank"
-                ><span class="text-primary-css"
-                  >Instagram: @bereanacupece</span
-                ></a
-              >
-            </div>
-          </div>
-
-          <a
-            href=""
-            class="btn btn-primary-css rounded-pill d-inline-flex flex-shrink-0 py-2 px-4"
-            ><i class="fa fa-location-arrow fa-1x"></i
-          ></a>
-        </div>
-      </nav>
-
-      <!-- Header Start -->
-      <div class="container-fluid bg-breadcrumb">
-        <div class="container text-center py-5" style="max-width: 900px">
-          <h4
-            class="text-white display-4 mb-4 wow fadeInDown"
-            data-wow-delay="0.1s"
-          >
-            Blog
+  <!-- Modal Search Start -->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h4 class="modal-title mb-0" id="exampleModalLabel">
+            Search by keyword
           </h4>
-          <ol
-            class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown"
-            data-wow-delay="0.3s"
-          >
-            <li class="breadcrumb-item"><a href="index.html">Início</a></li>
-            <li class="breadcrumb-item"><a href="#">Páginas</a></li>
-            <li class="breadcrumb-item active text-primary-css">
-              Novidades & Notícias
-            </li>
-          </ol>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-      <!-- Header End -->
-    </div>
-    <!-- Navbar & Hero End -->
-
-    <!-- Modal Search Start -->
-    <div
-      class="modal fade"
-      id="searchModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content rounded-0">
-          <div class="modal-header">
-            <h4 class="modal-title mb-0" id="exampleModalLabel">
-              Search by keyword
-            </h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body d-flex align-items-center">
-            <div class="input-group w-75 mx-auto d-flex">
-              <input
-                type="search"
-                class="form-control p-3"
-                placeholder="keywords"
-                aria-describedby="search-icon-1"
-              />
-              <span id="search-icon-1" class="input-group-text btn border p-3"
-                ><i class="fa fa-search text-white"></i
-              ></span>
-            </div>
+        <div class="modal-body d-flex align-items-center">
+          <div class="input-group w-75 mx-auto d-flex">
+            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1" />
+            <span id="search-icon-1" class="input-group-text btn border p-3"><i
+                class="fa fa-search text-white"></i></span>
           </div>
         </div>
       </div>
     </div>
-    <!-- Modal Search End -->
+  </div>
+  <!-- Modal Search End -->
 
-    <!-- Blog Start -->
-    <div class="container-fluid blog pt-5 mt-5 pb-5">
-      <div class="container pb-5">
-        <div
-          class="text-center mx-auto pb-5 wow fadeInUp"
-          data-wow-delay="0.2s"
-          style="max-width: 800px"
-        >
-          <h4 class="text-uppercase text-primary-css">Nosso Blog</h4>
-          <h1 class="display-3 text-capitalize mb-3">Novidades & Notícias</h1>
-        </div>
-        <div class="row g-4 justify-content-center">
-          <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="blog-item">
-              <div class="blog-img">
-                <img
-                  src="img/ebf.png"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-                <div class="blog-date px-4 py-2">
-                  <i class="fa fa-calendar-alt me-1"></i> 26 de Jul de 2024
-                </div>
-              </div>
-              <div class="blog-content rounded-bottom p-4">
-                <a
-                  href="https://ong-nova-historia.vercel.app/"
-                  target="_blank"
-                  class="h4 d-inline-block mb-3"
-                  >Nossa ONG: Associação Nova História</a
-                >
-                <p>
-                  Recentemente concluimos a semana da EBF (Escola Bíblica de
-                  Férias) e foi incrível... Acompanhe!
-                </p>
-                <a
-                  href="https://ong-nova-historia.vercel.app/"
-                  target="_blank"
-                  class="fw-bold text-secondary"
-                  >Veja mais... <i class="fa fa-angle-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="blog-item">
-              <div class="blog-img">
-                <img
-                  src="img/station.png"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-                <div class="blog-date px-4 py-2">
-                  <i class="fa fa-calendar-alt me-1"></i> 10 de Jul de 2024
-                </div>
-              </div>
-              <div class="blog-content rounded-bottom p-4">
-                <a
-                  href="https://www.instagram.com/jovensbereanoscupece_/"
-                  target="_blank"
-                  class="h4 d-inline-block mb-3"
-                  >Próxima Station: Sabádo de Jovens</a
-                >
-                <p>
-                  Ocorrerá no Dia 10 de Julho ás 19:00h na nossa igreja. O
-                  Evento é Focado ao público Jovem, mas todos estão convidados a
-                  participar.
-                </p>
-                <a
-                  href="https://www.instagram.com/jovensbereanoscupece_/"
-                  target="_blank"
-                  class="fw-bold text-secondary"
-                  >Veja mais... <i class="fa fa-angle-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="blog-item">
-              <div class="blog-img">
-                <img
-                  src="img/batismo.png"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-                <div class="blog-date px-4 py-2">
-                  <i class="fa fa-calendar-alt me-1"></i> 18 de Mai de 2024
-                </div>
-              </div>
-              <div class="blog-content rounded-bottom p-4">
-                <a
-                  href="https://www.instagram.com/stories/highlights/18202906633180983/"
-                  target="_blank"
-                  class="h4 d-inline-block mb-3"
-                  >Último Batismo: foi simplesmente incrível
-                </a>
-                <p>
-                  O Evento foi realizado na Bereana - Sede, que se encontra na
-                  Vila Mariana - SP. Lá se reuniu Cristãos de todas as
-                  ramificações.
-                </p>
-                <a
-                  href="https://www.instagram.com/stories/highlights/18202906633180983/"
-                  target="_blank"
-                  class="fw-bold text-secondary"
-                  >Veja mais... <i class="fa fa-angle-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Blog Start -->
+  <div class="container-fluid blog pt-5 mt-5 pb-5">
+    <div class="container pb-5">
+      <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+        <h4 class="text-uppercase text-primary-css">Nosso Blog</h4>
+        <h1 class="display-6 text-capitalize mb-3">Novidades & Notícias</h1>
       </div>
-    </div>
-    <!-- Blog End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-      <div class="container py-5">
-        <div class="row g-5 mb-5 align-items-center">
-          <div class="col-lg-7">
-            <div class="position-relative mx-auto">
-              <input
-                class="form-control rounded-pill w-100 py-3 ps-4 pe-5"
-                type="text"
-                placeholder="Endereço de e-mail para assinar"
-              />
-              <button
-                type="button"
-                class="btn btn-secondary-css rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2"
-              >
-                Inscrever
-              </button>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="blog-item">
+            <div class="blog-img">
+              <img src="img/ebf.png" class="img-fluid rounded-top w-100" alt="" />
+              <div class="blog-date px-4 py-2">
+                <i class="fa fa-calendar-alt me-1"></i> 26 de Jul de 2024
+              </div>
             </div>
-          </div>
-          <div class="col-lg-5">
-            <div
-              class="d-flex align-items-center justify-content-center justify-content-lg-end"
-            >
-              <a
-                class="btn btn-secondary-css btn-md-square rounded-circle me-3"
-                href="https://www.facebook.com/bereana.cupece"
-                target="_blank"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a
-                class="btn btn-secondary-css btn-md-square rounded-circle me-3"
-                href="https://www.instagram.com/bereanacupece/"
-                target="_blank"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a
-                class="btn btn-secondary-css btn-md-square rounded-circle me-3"
-                href="https://www.instagram.com/bereanacupece/"
-                target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a
-                class="btn btn-secondary-css btn-md-square rounded-circle me-0"
-                href="https://www.youtube.com/c/BereanaCupec%C3%AA"
-                target="_blank"
-                ><i class="fab fa-youtube"></i
-              ></a>
+            <div class="blog-content rounded-bottom p-4">
+              <a href="https://ong-nova-historia.vercel.app/" target="_blank" class="h4 d-inline-block mb-3">Nossa ONG:
+                Associação Nova História</a>
+              <p>
+                Recentemente concluimos a semana da EBF (Escola Bíblica de
+                Férias) e foi incrível... Acompanhe!
+              </p>
+              <a href="https://ong-nova-historia.vercel.app/" target="_blank" class="fw-bold text-secondary">Veja
+                mais... <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
         </div>
-        <div class="row g-5">
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <div class="footer-item">
-                <h3 class="text-white mb-4">
-                  <i><img width="75" src="img/logo.png" alt="Logo rodapé" /></i
-                  >Bereana
-                </h3>
-                <p class="mb-3">#AmorPelaPalavra</p>
+        <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
+          <div class="blog-item">
+            <div class="blog-img">
+              <img src="img/station.png" class="img-fluid rounded-top w-100" alt="" />
+              <div class="blog-date px-4 py-2">
+                <i class="fa fa-calendar-alt me-1"></i> 10 de Jul de 2024
               </div>
             </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <h4 class="text-white mb-4">Sobre Nós</h4>
-              <a href="https://www.instagram.com/bereanacupece/" target="_blank"
-                ><i class="fas fa-angle-right me-2"></i> Por que nos escolher</a
-              >
-              <a href="https://www.instagram.com/bereanacupece/" target="_blank"
-                ><i class="fas fa-angle-right me-2"></i> Contate-nos</a
-              >
-              <a href="https://www.instagram.com/bereanacupece/" target="_blank"
-                ><i class="fas fa-angle-right me-2"></i> Termos & Condições</a
-              >
+            <div class="blog-content rounded-bottom p-4">
+              <a href="https://www.instagram.com/jovensbereanoscupece_/" target="_blank"
+                class="h4 d-inline-block mb-3">Próxima Station: Sabádo de Jovens</a>
+              <p>
+                Ocorrerá no Dia 10 de Julho ás 19:00h na nossa igreja. O
+                Evento é Focado ao público Jovem, mas todos estão convidados a
+                participar.
+              </p>
+              <a href="https://www.instagram.com/jovensbereanoscupece_/" target="_blank"
+                class="fw-bold text-secondary">Veja mais... <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <h4 class="text-white mb-4">Horário de Funcionamento</h4>
-              <div class="mb-3">
-                <h6 class="text-muted mb-0">Quinta-feira:</h6>
-                <p class="text-white mb-0">20:00 às 21:30</p>
-              </div>
-              <div class="mb-3">
-                <h6 class="text-muted mb-0">Domingo:</h6>
-                <p class="text-white mb-0">18:00 às 20:30</p>
-              </div>
-              <div class="mb-3">
-                <h6 class="text-muted mb-0">Férias:</h6>
-                <p class="text-white mb-0">Indefinido...</p>
+        </div>
+        <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
+          <div class="blog-item">
+            <div class="blog-img">
+              <img src="img/batismo.png" class="img-fluid rounded-top w-100" alt="" />
+              <div class="blog-date px-4 py-2">
+                <i class="fa fa-calendar-alt me-1"></i> 18 de Mai de 2024
               </div>
             </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <h4 class="text-white mb-4">Informações de Contato</h4>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=R.+Florentino+Blanco,+28+-+Americanópolis,+São+Paulo+-+SP,+04338-020"
-                target="_blank"
-              >
-                <i class="fa fa-map-marker-alt me-2"></i> R. Florentino Blanco,
-                28 - Americanópolis, São Paulo - SP, 04338-020
+            <div class="blog-content rounded-bottom p-4">
+              <a href="https://www.instagram.com/stories/highlights/18202906633180983/" target="_blank"
+                class="h4 d-inline-block mb-3">Último Batismo: foi simplesmente incrível
               </a>
-              <a href="mailto:bereanacupece@gmail.com"
-                ><i class="fas fa-envelope me-2"></i> bereanacupece@gmail.com</a
-              >
-              <a href="tel:+012 345 67890"
-                ><i class="fas fa-phone me-2"></i> (11) 5907-8999</a
-              >
+              <p>
+                O Evento foi realizado na Bereana - Sede, que se encontra na
+                Vila Mariana - SP. Lá se reuniu Cristãos de todas as
+                ramificações.
+              </p>
+              <a href="https://www.instagram.com/stories/highlights/18202906633180983/" target="_blank"
+                class="fw-bold text-secondary">Veja mais... <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Footer End -->
+  </div>
+  <!-- Blog End -->
 
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6 text-center text-md-start mb-md-0">
-            <span class="text-body"
-              ><a
-                href="https://www.instagram.com/bereanacupece/"
-                target="_blank"
-                class="border-bottom text-white"
-                >&copy; Assembleia de Deus Bereana Cupecê</a
-              >, Todos os direitos reservados.</span
-            >
+  <!-- Start Carrosel Comments -->
+  <div id="carouselId2" class="carousel slide mb-5" data-ride="carousel">
+
+    <h4 class="text-uppercase text-primary-css text-center">Mensagens</h4>
+    <h1 class="display-6 text-capitalize mb-3 text-center">ao seu coração...</h1>
+
+    <ol class="carousel-indicators">
+      <li data-bs-target="#carouselId2" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#carouselId2" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselId2" data-bs-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <div class="container p-5">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-sm-12 col-md-4">
+              <img class="img-fluid rounded blog-img" src="img/blog/tio-marqunhos.png" alt="Autor do comentário">
+            </div>
+            <div class="col-sm-12 col-md-8 content-text">
+              <p style="min-height: 100px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                excepturi
+                sapiente pariatur sequi, dicta maiores dolor exercitationem nihil corporis, culpa iusto quia quaerat
+                ipsum? Earum in, iure optio, cupiditate obcaecati veritatis non error fuga sapiente aut excepturi
+                consequuntur aliquid vel dolore, quibusdam est. Distinctio magni ipsam impedit necessitatibus voluptate?
+                Dignissimos.</p>
+              <h6>- Autor Anônimo</h6>
+              <h6 class="text-dark">Pastor, Bereana Cupecê</h6>
+            </div>
           </div>
-          <!-- <div class="col-md-6 text-center text-md-end text-body">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container p-5">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-sm-12 col-md-4">
+              <img class="img-fluid rounded blog-img" src="img/blog/lele.png" alt="Autor do comentário">
+            </div>
+            <div class="col-sm-12 col-md-8 content-text">
+              <p style="min-height: 100px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                excepturi
+                sapiente pariatur sequi, dicta maiores dolor exercitationem nihil corporis, culpa iusto quia quaerat
+                ipsum? Earum in, iure optio, cupiditate obcaecati veritatis non error fuga sapiente aut excepturi
+                consequuntur aliquid vel dolore, quibusdam est. Distinctio magni ipsam impedit necessitatibus voluptate?
+                Dignissimos.</p>
+              <h6>- Autor Anônimo</h6>
+              <h6 class="text-dark">Pastor, Bereana Cupecê</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId2" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon carousel-control-prev-icon2 btn btn-primary-css" aria-hidden="true">
+        <i class="fa fa-angle-left fa-3x"></i>
+      </span>
+      <span class="visually-hidden">Voltar</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselId2" data-bs-slide="next">
+      <span class="carousel-control-next-icon carousel-control-next-icon2 btn btn-primary-css" aria-hidden="true">
+        <i class="fa fa-angle-right fa-3x"></i>
+      </span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
+
+  <!-- END Carrosel Comments -->
+
+
+  <!-- Footer Start -->
+  <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-7">
+          <div class="position-relative mx-auto">
+            <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+              placeholder="Endereço de e-mail para assinar" />
+            <button type="button"
+              class="btn btn-secondary-css rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">
+              Inscrever
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+            <a class="btn btn-secondary-css btn-md-square rounded-circle me-3"
+              href="https://www.facebook.com/bereana.cupece" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-secondary-css btn-md-square rounded-circle me-3"
+              href="https://www.instagram.com/bereanacupece/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-secondary-css btn-md-square rounded-circle me-3"
+              href="https://www.instagram.com/bereanacupece/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-secondary-css btn-md-square rounded-circle me-0"
+              href="https://www.youtube.com/c/BereanaCupec%C3%AA" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="row g-5">
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <div class="footer-item">
+              <h3 class="text-white mb-4">
+                <i><img width="75" src="img/logo.png" alt="Logo rodapé" /></i>Bereana
+              </h3>
+              <p class="mb-3">#AmorPelaPalavra</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <h4 class="text-white mb-4">Sobre Nós</h4>
+            <a href="https://www.instagram.com/bereanacupece/" target="_blank"><i class="fas fa-angle-right me-2"></i>
+              Por que nos escolher</a>
+            <a href="https://www.instagram.com/bereanacupece/" target="_blank"><i class="fas fa-angle-right me-2"></i>
+              Contate-nos</a>
+            <a href="https://www.instagram.com/bereanacupece/" target="_blank"><i class="fas fa-angle-right me-2"></i>
+              Termos & Condições</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <h4 class="text-white mb-4">Horário de Funcionamento</h4>
+            <div class="mb-3">
+              <h6 class="text-muted mb-0">Quinta-feira:</h6>
+              <p class="text-white mb-0">20:00 às 21:30</p>
+            </div>
+            <div class="mb-3">
+              <h6 class="text-muted mb-0">Domingo:</h6>
+              <p class="text-white mb-0">18:00 às 20:30</p>
+            </div>
+            <div class="mb-3">
+              <h6 class="text-muted mb-0">Férias:</h6>
+              <p class="text-white mb-0">Indefinido...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <h4 class="text-white mb-4">Informações de Contato</h4>
+            <a href="https://www.google.com/maps/search/?api=1&query=R.+Florentino+Blanco,+28+-+Americanópolis,+São+Paulo+-+SP,+04338-020"
+              target="_blank">
+              <i class="fa fa-map-marker-alt me-2"></i> R. Florentino Blanco,
+              28 - Americanópolis, São Paulo - SP, 04338-020
+            </a>
+            <a href="mailto:bereanacupece@gmail.com"><i class="fas fa-envelope me-2"></i> bereanacupece@gmail.com</a>
+            <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> (11) 5907-8999</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- Copyright Start -->
+  <div class="container-fluid copyright py-4">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-md-0">
+          <span class="text-body"><a href="https://www.instagram.com/bereanacupece/" target="_blank"
+              class="border-bottom text-white">&copy; Assembleia de Deus Bereana Cupecê</a>, Todos os direitos
+            reservados.</span>
+        </div>
+        <!-- <div class="col-md-6 text-center text-md-end text-body">
             Desenvolvido por
             <a
               class="border-bottom text-white"
@@ -434,28 +372,25 @@
               >Kawan Wnn.</a
             >
           </div> -->
-        </div>
       </div>
     </div>
-    <!-- Copyright End -->
+  </div>
+  <!-- Copyright End -->
 
-    <!-- Back to Top -->
-    <a
-      href="#"
-      class="btn btn-secondary btn-lg-square rounded-circle back-to-top"
-      ><i class="fa fa-arrow-up"></i
-    ></a>
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-  </body>
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+</body>
+
 </html>

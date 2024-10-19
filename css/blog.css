@@ -1,0 +1,26 @@
+/* Estilo para as imagens pequenas em telas menores */
+.small-img {
+    width: 75%;
+    margin: 0 auto;
+}
+
+/* Ajuste do padding para colunas */
+.carousel-item .content-text {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (max-width: 576px) {
+
+    /* Reduz o tamanho da imagem no modo coluna (mobile) */
+    .small-img {
+        width: 50%;
+    }
+
+    /* Textos alinhados para mobile, ocupando 100% */
+    .carousel-item .content-text {
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
