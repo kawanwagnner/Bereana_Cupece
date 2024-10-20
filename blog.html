@@ -82,7 +82,7 @@
         </div>
 
         <a href="" class="btn btn-primary-css rounded-pill d-inline-flex flex-shrink-0 py-2 px-4"><i
-            class="fa fa-location-arrow fa-1x"></i></a>
+            class="fa fa-calendar fa-1x"></i></a>
       </div>
     </nav>
 
@@ -202,6 +202,130 @@
     </div>
   </div>
   <!-- Blog End -->
+
+  <br>
+
+  <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+    <h4 class="text-uppercase text-primary-css">Nosso Blog</h4>
+    <h1 class="display-6 text-capitalize mb-3">Novidades & Notícias</h1>
+  </div>
+
+  <section class="schedule-body py-5 my-5" cz-shortcut-listen="true">
+    <div class="toggle">
+      <input id="switch" type="checkbox" name="theme">
+      <label for="switch">Toggle</label>
+    </div>
+
+    <!-- Container do calendário -->
+    <div id="container-schedule">
+      <!-- Cabeçalho com título e navegação -->
+      <div id="header">
+        <div id="monthDisplay" class="text-capitalize">outubro, 2024</div>
+
+        <div>
+          <button id="backButton">Voltar</button>
+          <button id="nextButton">Próximo</button>
+        </div>
+      </div>
+
+      <!-- Dias da semana -->
+      <div id="weekdays">
+        <div>Domingo</div>
+        <div>Segunda-feira</div>
+        <div>Terça-feira</div>
+        <div>Quarta-feira</div>
+        <div>Quinta-feira</div>
+        <div>Sexta-feira</div>
+        <div>Sábado</div>
+      </div>
+
+      <!-- Div dinâmica para os dias do mês -->
+      <div id="calendar">
+        <!-- O conteúdo de dias será gerado dinamicamente via JavaScript -->
+      </div>
+
+      <!-- Modal de Novo Evento -->
+      <div id="newEventModal" style="display:none;"> <!-- Adicionando display:none por padrão -->
+        <h2>Novo Evento</h2>
+        <input id="eventTitleInput" placeholder="Título do Evento" type="text">
+        <button id="saveButton">Salvar</button>
+        <button id="cancelButton">Cancelar</button>
+      </div>
+
+      <!-- Modal para Visualizar ou Deletar Evento -->
+      <div id="deleteEventModal" style="display:none;"> <!-- Adicionando display:none por padrão -->
+        <h2>Evento</h2>
+        <div id="eventText"></div><br>
+        <button id="deleteButton">Deletar</button>
+        <button id="closeButton">Fechar</button>
+      </div>
+
+      <!-- Backdrop para o modal -->
+      <div id="modalBackDrop" style="display:none;"></div>
+    </div>
+  </section>
+
+
+  <script src="js/schedule.js" defer></script>
+
+  <script>const html = document.querySelector('html')
+    const checkbox = document.querySelector("input[name=theme]")
+
+    const getStyle = (element, style) =>
+      window
+        .getComputedStyle(element)
+        .getPropertyValue(style)
+
+
+    const initialColors = {
+      bodyColor: getStyle(html, '--body-color'),
+      headerColor: getStyle(html, '--header-color'),
+      headerButton: getStyle(html, '--header-button'),
+      colorWeekdays: getStyle(html, '--color-weekdays'),
+      currentDay: getStyle(html, '--current-day'),
+      eventColor: getStyle(html, '--event-color'),
+      eventColor: getStyle(html, '--event-color'),
+      colorDay: getStyle(html, '--color-day'),
+      modalEvent: getStyle(html, '--modal-event')
+
+
+
+    }
+
+    const darkMode = {
+      bodyColor: '#282a36',
+      headerColor: '#ff5555',
+      headerButton: '#bd93f9',
+      colorWeekdays: '#6272a4',
+      currentDay: '#f8f8f2',
+      eventColor: '#6272a4',
+      colorDay: '#44475a',
+      modalEvent: '#6272a4'
+
+    }
+
+    const transformKey = key =>
+      "--" + key.replace(/([A-Z])/, "-$1").toLowerCase()
+
+
+    const changeColors = (colors) => {
+      Object.keys(colors).map(key => {
+        html.style.setProperty(transformKey(key), colors[key])
+        console.log(transformKey(key), colors[key])
+      }
+      )
+      console.log(colors)
+    }
+
+
+
+    checkbox.addEventListener("change", ({ target }) => {
+      target.checked ? changeColors(darkMode) : changeColors(initialColors)
+    })
+
+
+
+  </script>
 
   <br>
 

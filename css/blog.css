@@ -2,6 +2,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Prateleira de Livos CSS */
 .digital-bookshelf {
     background-color: #fff;
     border-radius: 10px;
@@ -45,3 +46,218 @@ body {
     background-color: #0056b3;
     border-color: #0056b3;
 }
+
+/* FIM prateleira de Livros CSS */
+
+
+/* Agenda de Eventos - Main */
+html {
+    --body-color: #FFFCFF;
+    --header-color: #d36c6c;
+    --header-button: #92a1d1;
+    --color-weekdays: #247BA0;
+    --box-shadow: #CBD4C2;
+    --hover: #e8faed;
+    --current-day: #e8f4fa;
+    --event-color: #58bae4;
+    --modal-event: #e8f4fa;
+    --color-day: white;
+}
+
+.schedule-body {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    background-color: var(--body-color);
+}
+
+
+.schedule-body button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.schedule-body #header {
+    padding: 10px;
+    color: var(--header-color);
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.schedule-body #header button {
+    background-color: var(--header-button);
+}
+
+#container-schedule {
+    width: 770px;
+}
+
+#weekdays {
+    width: 100%;
+    display: flex;
+    color: var(--color-weekdays);
+}
+
+#weekdays div {
+    width: 100px;
+    padding: 10px;
+}
+
+#calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    width: 70px;
+    padding: 10px;
+    height: 70px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: var(--color-day);
+    margin: 5px;
+    box-shadow: 0px 0px 3px var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15%;
+}
+
+.day:hover {
+    background-color: var(--hover);
+}
+
+.day+#currentDay {
+    background-color: var(--current-day);
+}
+
+.event {
+    font-size: 10px;
+    padding: 3px;
+    background-color: var(--event-color);
+    color: white;
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
+}
+
+.padding {
+    cursor: default !important;
+    background-color: var(--body-color) !important;
+    box-shadow: none !important;
+}
+
+#newEventModal,
+#deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: var(--modal-event);
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 350px;
+    top: 100px;
+    left: calc(50% - 175px);
+    position: absolute;
+    font-family: sans-serif;
+}
+
+#eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+}
+
+#eventTitleInput.error {
+    border: 2px solid red;
+}
+
+#cancelButton,
+#deleteButton {
+    background-color: var(--header-color);
+}
+
+#saveButton,
+#closeButton {
+    background-color: var(--header-button);
+}
+
+#eventText {
+    font-size: 14px;
+}
+
+#modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* FIM agenda de eventos */
+
+
+
+/* Agenda de Eventos - DarkMode */
+.schedule-body input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.schedule-body label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+    left: -50px;
+}
+
+.schedule-body label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+.schedule-body input:checked+label {
+    background-color: rgb(142, 142, 240);
+}
+
+.schedule-body input:checked+label::after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+.schedule-body label:active:after {
+    width: 45px;
+}
+
+/* FIM Agenda de Eventos - DarkMode */
