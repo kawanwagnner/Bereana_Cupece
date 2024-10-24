@@ -1,15 +1,20 @@
 // Variáveis globais
 let nav = 0;
 let clicked = null;
-let events = JSON.parse(localStorage.getItem("events") || "[]"); // Inicializando de forma segura
+let events = [];
 
-// Variáveis do modal:
-const newEvent = document.getElementById("newEventModal");
+// Referências do DOM
+const newEventModal = document.getElementById("newEventModal");
 const deleteEventModal = document.getElementById("deleteEventModal");
 const backDrop = document.getElementById("modalBackDrop");
 const eventTitleInput = document.getElementById("eventTitleInput");
+const calendar = document.getElementById("calendar");
+const monthDisplay = document.getElementById("monthDisplay");
+const viewEventModal = document.getElementById("viewEventModal");
+const eventText = document.getElementById("eventText");
+const closeButton = document.getElementById("closeButton");
 
-// Array com os dias da semana:
+// Constantes
 const weekdays = [
   "domingo",
   "segunda-feira",
@@ -20,196 +25,166 @@ const weekdays = [
   "sábado",
 ];
 
-// Funções
-
-function openModal(date) {
-  console.log("Abrindo modal para a data: ", date);
-  clicked = date;
-  const eventDay = events.find((event) => event.date === clicked);
-
-  if (eventDay) {
-    console.log("Evento existente encontrado: ", eventDay.title);
-    document.getElementById("eventText").innerText = eventDay.title;
-    deleteEventModal.style.display = "block";
-  } else {
-    console.log("Nenhum evento existente, abrindo modal de novo evento");
-    newEvent.style.display = "block";
+// Carregar eventos do JSON
+async function loadEvents() {
+  try {
+    const response = await fetch("db/events.json");
+    events = await response.json();
+    console.log("Eventos carregados do arquivo JSON: ", events);
+    loadCalendar();
+  } catch (error) {
+    console.error("Erro ao carregar o arquivo JSON: ", error);
   }
-
-  backDrop.style.display = "block";
 }
 
-function load() {
-  console.log("Carregando calendário...");
+// Carregar o calendário
+function loadCalendar() {
+  const currentDate = getCurrentDate();
+  updateMonthDisplay(currentDate);
+  generateCalendarDays(currentDate);
+}
+
+function getCurrentDate() {
   const date = new Date();
+  if (nav !== 0) date.setMonth(new Date().getMonth() + nav);
+  return date;
+}
 
-  // Alterar o título do mês
-  if (nav !== 0) {
-    date.setMonth(new Date().getMonth() + nav);
-  }
-
-  const day = date.getDate();
-  const month = date.getMonth();
-  const year = date.getFullYear();
-  const daysMonth = new Date(year, month + 1, 0).getDate();
-  const firstDayMonth = new Date(year, month, 1);
-  const dateString = firstDayMonth.toLocaleDateString("pt-br", {
-    weekday: "long",
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-  });
-
-  const paddingDays = weekdays.indexOf(dateString.split(", ")[0]);
-
-  // Mostrar mês e ano
-  console.log(`Exibindo mês: ${month + 1}, Ano: ${year}`);
-  document.getElementById(
-    "monthDisplay"
-  ).innerText = `${date.toLocaleDateString("pt-br", {
+function updateMonthDisplay(date) {
+  monthDisplay.innerText = date.toLocaleDateString("pt-br", {
     month: "long",
-  })}, ${year}`;
+    year: "numeric",
+  });
+}
 
-  const calendar = document.getElementById("calendar");
+function generateCalendarDays(date) {
   calendar.innerHTML = "";
+  const daysInMonth = getDaysInMonth(date);
+  const paddingDays = getPaddingDays(date);
 
-  // Criar divs para os dias
-  for (let i = 1; i <= paddingDays + daysMonth; i++) {
-    const dayS = document.createElement("div");
-    dayS.classList.add("day");
-    const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-
-    if (i > paddingDays) {
-      dayS.innerText = i - paddingDays;
-
-      const eventDay = events.find((event) => event.date === dayString);
-
-      if (i - paddingDays === day && nav === 0) {
-        console.log("Destacando o dia atual");
-        dayS.id = "currentDay"; // Destacar o dia atual
-      }
-
-      if (eventDay) {
-        console.log("Evento encontrado para o dia: ", eventDay.title);
-        const eventDiv = document.createElement("div");
-        eventDiv.classList.add("event");
-        eventDiv.innerText = eventDay.title;
-        dayS.appendChild(eventDiv);
-      }
-
-      dayS.addEventListener("click", () => {
-        console.log("Dia clicado: ", dayString);
-        openModal(dayString);
-      });
-    } else {
-      dayS.classList.add("padding");
-    }
-
-    calendar.appendChild(dayS);
+  for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+    const dayElement = createDayElement(i, paddingDays, date);
+    calendar.appendChild(dayElement);
   }
 }
 
-function closeModal() {
-  console.log("Fechando modal");
-  eventTitleInput.classList.remove("error");
-  newEvent.style.display = "none";
-  backDrop.style.display = "none";
-  deleteEventModal.style.display = "none";
-  eventTitleInput.value = "";
-  clicked = null;
-  load();
+function getDaysInMonth(date) {
+  return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 }
 
-// Validação de eventos duplicados e limite de caracteres
-function saveEvent() {
-  const eventTitle = eventTitleInput.value.trim();
-  console.log("Salvando evento: ", eventTitle);
+function getPaddingDays(date) {
+  const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+  const dateString = firstDayOfMonth.toLocaleDateString("pt-br", {
+    weekday: "long",
+  });
+  return weekdays.indexOf(dateString);
+}
 
-  if (eventTitle.length === 0) {
-    eventTitleInput.classList.add("error");
-    console.log("Erro: Título do evento vazio");
-    return;
-  }
+function createDayElement(dayIndex, paddingDays, date) {
+  const dayElement = document.createElement("div");
+  dayElement.classList.add("day");
 
-  if (eventTitle.length > 30) {
-    eventTitleInput.classList.add("error");
-    console.log("Erro: O título do evento é muito longo");
-    alert("O título do evento não pode ter mais de 30 caracteres!");
-    return;
-  }
-
-  const duplicateEvent = events.find(
-    (event) => event.date === clicked && event.title === eventTitle
+  const dayNumber = dayIndex - paddingDays;
+  const dayString = formatDateString(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    dayNumber
   );
 
-  if (duplicateEvent) {
-    eventTitleInput.classList.add("error");
-    console.log("Erro: Evento duplicado");
-    alert("Já existe um evento com esse título nesta data.");
-    return;
+  if (dayIndex > paddingDays) {
+    dayElement.innerText = dayNumber;
+    highlightCurrentDay(dayNumber, date, dayElement);
+    displayEventIfExist(dayString, dayElement);
+    dayElement.addEventListener("click", () => handleDayClick(dayString));
+  } else {
+    dayElement.classList.add("padding");
   }
 
-  eventTitleInput.classList.remove("error");
-  console.log("Evento salvo com sucesso");
-  events.push({ date: clicked, title: eventTitle });
-  localStorage.setItem("events", JSON.stringify(events));
-  closeModal();
+  return dayElement;
 }
 
-function deleteEvent() {
-  console.log("Deletando evento para a data: ", clicked);
-  events = events.filter((event) => event.date !== clicked);
-  localStorage.setItem("events", JSON.stringify(events));
-  closeModal();
+function formatDateString(year, month, day) {
+  return `${year}-${month.toString().padStart(2, "0")}-${day
+    .toString()
+    .padStart(2, "0")}`;
 }
 
-// Fechar modal com 'Esc' ou clique fora do modal
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    console.log("Tecla 'Esc' pressionada, fechando modal");
-    closeModal();
+function highlightCurrentDay(dayNumber, date, dayElement) {
+  const isToday = dayNumber === date.getDate() && nav === 0;
+  if (isToday) dayElement.id = "currentDay";
+}
+
+function displayEventIfExist(dayString, dayElement) {
+  const event = findEventByDate(dayString);
+  if (event) {
+    const eventDiv = document.createElement("div");
+    eventDiv.classList.add("event");
+    eventDiv.innerText = event.title;
+    dayElement.appendChild(eventDiv);
   }
+}
+
+function findEventByDate(dayString) {
+  return events.find((event) => {
+    const eventDate = new Date(event.date);
+    return (
+      formatDateString(
+        eventDate.getFullYear(),
+        eventDate.getMonth() + 1,
+        eventDate.getDate()
+      ) === dayString
+    );
+  });
+}
+
+function handleDayClick(dayString) {
+  const event = findEventByDate(dayString);
+  if (event) openEventModal(event);
+}
+
+// Abrir o modal de visualização de eventos
+function openEventModal(event) {
+  eventText.innerText = event.title;
+  viewEventModal.style.display = "block";
+  backDrop.style.display = "block";
+  centerModal(viewEventModal);
+}
+
+function centerModal(modal) {
+  const scrollPosition = window.scrollY;
+  modal.style.top = `${scrollPosition + window.innerHeight / 2}px`;
+}
+
+// Fechar o modal
+closeButton.addEventListener("click", closeEventModal);
+
+// Fechar modal ao clicar fora dele
+backDrop.addEventListener("click", (e) => {
+  if (e.target === backDrop) closeEventModal();
 });
 
-backDrop.addEventListener("click", () => {
-  console.log("Clique fora do modal, fechando");
-  closeModal();
-});
+function closeEventModal() {
+  viewEventModal.style.display = "none";
+  backDrop.style.display = "none";
+}
 
-// Botões
-function buttons() {
+// Navegação entre meses
+function initializeNavigationButtons() {
   document.getElementById("backButton").addEventListener("click", () => {
-    console.log("Botão 'Voltar' clicado");
     nav--;
-    load();
+    loadCalendar();
   });
 
   document.getElementById("nextButton").addEventListener("click", () => {
-    console.log("Botão 'Próximo' clicado");
     nav++;
-    load();
-  });
-
-  document.getElementById("saveButton").addEventListener("click", () => {
-    console.log("Botão 'Salvar' clicado");
-    saveEvent();
-  });
-
-  document.getElementById("cancelButton").addEventListener("click", () => {
-    console.log("Botão 'Cancelar' clicado");
-    closeModal();
-  });
-
-  document.getElementById("deleteButton").addEventListener("click", () => {
-    console.log("Botão 'Deletar' clicado");
-    deleteEvent();
-  });
-
-  document.getElementById("closeButton").addEventListener("click", () => {
-    console.log("Botão 'Fechar' clicado");
-    closeModal();
+    loadCalendar();
   });
 }
 
-buttons();
-load();
+// Inicializar a aplicação
+function initialize() {
+  loadEvents();
+  initializeNavigationButtons();
+}
+
+initialize();

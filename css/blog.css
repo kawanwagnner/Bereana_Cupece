@@ -2,7 +2,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Prateleira de Livos CSS */
+/* Prateleira de Livros CSS */
 .digital-bookshelf {
     background-color: #fff;
     border-radius: 10px;
@@ -49,7 +49,6 @@ body {
 
 /* FIM prateleira de Livros CSS */
 
-
 /* Agenda de Eventos - Main */
 html {
     --body-color: #FFFCFF;
@@ -70,7 +69,6 @@ html {
     justify-content: center;
     background-color: var(--body-color);
 }
-
 
 .schedule-body button {
     width: 75px;
@@ -103,12 +101,14 @@ html {
 #weekdays {
     width: 100%;
     display: flex;
+    justify-content: space-between;
     color: var(--color-weekdays);
 }
 
 #weekdays div {
     width: 100px;
     padding: 10px;
+    text-align: center;
 }
 
 #calendar {
@@ -116,11 +116,12 @@ html {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .day {
     width: 70px;
-    padding: 10px;
+    padding: 7px;
     height: 70px;
     cursor: pointer;
     box-sizing: border-box;
@@ -157,44 +158,23 @@ html {
     box-shadow: none !important;
 }
 
-#newEventModal,
-#deleteEventModal {
-    display: none;
-    z-index: 20;
-    padding: 25px;
-    background-color: var(--modal-event);
-    box-shadow: 0px 0px 3px black;
-    border-radius: 5px;
-    width: 350px;
-    top: 100px;
-    left: calc(50% - 175px);
+#viewEventModal {
     position: absolute;
-    font-family: sans-serif;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: none;
 }
 
-#eventTitleInput {
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 25px;
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    box-shadow: 0px 0px 3px gray;
-}
-
-#eventTitleInput.error {
-    border: 2px solid red;
-}
-
-#cancelButton,
-#deleteButton {
-    background-color: var(--header-color);
-}
-
-#saveButton,
-#closeButton {
-    background-color: var(--header-button);
+#viewEventModal .close-btn {
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
 }
 
 #eventText {
@@ -212,21 +192,14 @@ html {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* FIM agenda de eventos */
-
-
-
-/* Agenda de Eventos - DarkMode */
 /* Ajustes gerais */
 #container-schedule {
     max-width: 100%;
     padding: 10px;
 }
 
-/* Padding nas laterais em dispositivos móveis */
 .schedule-body {
     padding: 0 20px;
-    /* Adiciona espaço nas laterais */
 }
 
 #header {
@@ -252,43 +225,29 @@ html {
     outline: none;
 }
 
-/* Botões - Estilo mais bonito */
 .schedule-body button {
     background-color: orange !important;
-    /* Cor padrão do botão */
     color: white;
     border: none;
     outline: none;
     padding: 10px 15px;
-    /* Maior padding para dar mais destaque */
     border-radius: 25px;
-    /* Bordas mais arredondadas */
     font-size: 16px;
-    /* Fonte maior */
     cursor: pointer;
     box-shadow: 0 4px 6px #0000001a;
-    /* Sombra suave */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito hover (passar o mouse) */
 .schedule-body button:hover {
     background-color: #ffa600a7;
-    /* Cor de destaque ao passar o mouse */
     transform: translateY(-2px);
-    /* Efeito de leve elevação */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    /* Sombra mais intensa */
 }
 
-/* Efeito ao clicar (active) */
 .schedule-body button:active {
     transform: translateY(0);
-    /* Volta ao normal ao clicar */
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-    /* Sombra mais suave ao clicar */
 }
-
 
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
@@ -298,13 +257,11 @@ html {
 
     .schedule-body {
         padding: 0 15px;
-        /* Reduz o padding lateral para telas médias */
     }
 
     #header {
         font-size: 20px;
         flex-direction: column;
-        /* Header em coluna para telas pequenas */
         align-items: center;
     }
 
@@ -319,12 +276,18 @@ html {
         font-size: 12px;
         padding: 6px 8px;
     }
+
+    /* Ajustes para alinhar dias e dias da semana */
+    #weekdays,
+    #calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
     .schedule-body {
         padding: 0 10px;
-        /* Padding menor para telas bem pequenas */
     }
 
     #header {
@@ -344,6 +307,64 @@ html {
         font-size: 10px;
         padding: 5px 8px;
     }
+
+    /* Ajustes para alinhar dias e dias da semana */
+    #weekdays,
+    #calendar {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+
+    /* Ajuste para dias da semana com apenas a primeira letra em telas menores */
+    #weekdays div::after {
+        content: attr(data-letter);
+        font-size: 1rem;
+    }
+
+    #weekdays div {
+        width: 70px;
+        padding: 5px;
+        font-size: 0;
+        /* Esconde o texto completo */
+    }
 }
 
-/* FIM Agenda de Eventos - DarkMode */
+/* Dark mode */
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+    left: -50px;
+    transition: background-color 0.3s ease, left 0.3s ease;
+}
+
+label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked+label {
+    background-color: rgb(142, 142, 142);
+    left: -15px;
+}
+
+input:checked+label::after {
+    left: 25px;
+}
