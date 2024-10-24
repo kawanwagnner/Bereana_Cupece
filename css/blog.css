@@ -217,47 +217,133 @@ html {
 
 
 /* Agenda de Eventos - DarkMode */
-.schedule-body input[type=checkbox] {
-    height: 0;
-    width: 0;
-    visibility: hidden;
+/* Ajustes gerais */
+#container-schedule {
+    max-width: 100%;
+    padding: 10px;
 }
 
-.schedule-body label {
+/* Padding nas laterais em dispositivos móveis */
+.schedule-body {
+    padding: 0 20px;
+    /* Adiciona espaço nas laterais */
+}
+
+#header {
+    padding: 10px;
+    color: var(--header-color);
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header div,
+#header button {
+    margin: 0 10px;
+}
+
+.schedule-body #header button {
+    background-color: var(--header-button);
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
     cursor: pointer;
-    text-indent: -9999px;
-    width: 52px;
-    height: 27px;
-    background: grey;
-    float: right;
-    border-radius: 100px;
-    position: relative;
-    left: -50px;
+    outline: none;
 }
 
-.schedule-body label::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 20px;
-    height: 20px;
-    background-color: #000;
-    border-radius: 90px;
-    transition: 0.3s;
+/* Botões - Estilo mais bonito */
+.schedule-body button {
+    background-color: orange !important;
+    /* Cor padrão do botão */
+    color: white;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    /* Maior padding para dar mais destaque */
+    border-radius: 25px;
+    /* Bordas mais arredondadas */
+    font-size: 16px;
+    /* Fonte maior */
+    cursor: pointer;
+    box-shadow: 0 4px 6px #0000001a;
+    /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.schedule-body input:checked+label {
-    background-color: rgb(142, 142, 240);
+/* Efeito hover (passar o mouse) */
+.schedule-body button:hover {
+    background-color: #ffa600a7;
+    /* Cor de destaque ao passar o mouse */
+    transform: translateY(-2px);
+    /* Efeito de leve elevação */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    /* Sombra mais intensa */
 }
 
-.schedule-body input:checked+label::after {
-    left: calc(100% - 5px);
-    transform: translateX(-100%);
+/* Efeito ao clicar (active) */
+.schedule-body button:active {
+    transform: translateY(0);
+    /* Volta ao normal ao clicar */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra mais suave ao clicar */
 }
 
-.schedule-body label:active:after {
-    width: 45px;
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    #container-schedule {
+        padding: 10px;
+    }
+
+    .schedule-body {
+        padding: 0 15px;
+        /* Reduz o padding lateral para telas médias */
+    }
+
+    #header {
+        font-size: 20px;
+        flex-direction: column;
+        /* Header em coluna para telas pequenas */
+        align-items: center;
+    }
+
+    #header div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    #header button {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-body {
+        padding: 0 10px;
+        /* Padding menor para telas bem pequenas */
+    }
+
+    #header {
+        font-size: 18px;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    #header div {
+        width: 100%;
+        justify-content: space-around;
+        padding-top: 5px;
+    }
+
+    #header button {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
 }
 
 /* FIM Agenda de Eventos - DarkMode */
