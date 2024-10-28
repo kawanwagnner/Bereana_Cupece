@@ -1,370 +1,379 @@
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /* Prateleira de Livros CSS */
 .digital-bookshelf {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .bookshelf-title {
-    font-size: 2.5rem;
-    color: #343a40;
+  font-size: 2.5rem;
+  color: #343a40;
 }
 
 .shelf-book-card {
-    border: none;
+  border: none;
 }
 
 .book-cover {
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
 .book-title {
-    font-size: 1.2rem;
-    color: #007bff;
+  font-size: 1.2rem;
+  color: #007bff;
 }
 
 .book-description {
-    font-size: 0.9rem;
-    color: #6c757d;
+  font-size: 0.9rem;
+  color: #6c757d;
 }
 
 .buy-button {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: background-color 0.3s ease;
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease;
 }
 
 .buy-button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+  background-color: #0056b3;
+  border-color: #0056b3;
 }
 
 /* FIM prateleira de Livros CSS */
 
 /* Agenda de Eventos - Main */
 html {
-    --body-color: #FFFCFF;
-    --header-color: #d36c6c;
-    --header-button: #92a1d1;
-    --color-weekdays: #247BA0;
-    --box-shadow: #CBD4C2;
-    --hover: #e8faed;
-    --current-day: #e8f4fa;
-    --event-color: #58bae4;
-    --modal-event: #e8f4fa;
-    --color-day: white;
+  --body-color: #fffcff;
+  --header-color: #d36c6c;
+  --header-button: #92a1d1;
+  --color-weekdays: #247ba0;
+  --box-shadow: #cbd4c2;
+  --hover: #e8faed;
+  --current-day: #e8f4fa;
+  --event-color: #58bae4;
+  --modal-event: #e8f4fa;
+  --color-day: white;
 }
 
 .schedule-body {
-    display: flex;
-    margin-top: 50px;
-    justify-content: center;
-    background-color: var(--body-color);
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  background-color: var(--body-color);
 }
 
 .schedule-body button {
-    width: 75px;
-    cursor: pointer;
-    box-shadow: 0px 0px 2px gray;
-    border: none;
-    outline: none;
-    padding: 5px;
-    border-radius: 5px;
-    color: white;
+  width: 75px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px gray;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
 }
 
 .schedule-body #header {
-    padding: 10px;
-    color: var(--header-color);
-    font-size: 26px;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: space-between;
+  padding: 10px;
+  color: var(--header-color);
+  font-size: 26px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
 }
 
 .schedule-body #header button {
-    background-color: var(--header-button);
+  background-color: var(--header-button);
 }
 
 #container-schedule {
-    width: 770px;
+  width: 770px;
 }
 
 #weekdays {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    color: var(--color-weekdays);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-weekdays);
 }
 
 #weekdays div {
-    width: 100px;
-    padding: 10px;
-    text-align: center;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem; /* Tamanho da letra para visualização clara */
+  position: relative;
+}
+
+#weekdays div::before {
+  content: attr(data-letter); /* Pega o valor do atributo 'data-letter' */
+  font-size: 1.5rem; /* Ajusta o tamanho da letra para o visual desejado */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#weekdays div {
+  color: var(--color-weekdays); /* Mantém a cor */
 }
 
 #calendar {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Cria 7 colunas de tamanho igual */
+  grid-gap: 10px; /* Espaçamento entre os dias */
 }
 
 .day {
-    width: 70px;
-    padding: 7px;
-    height: 70px;
-    cursor: pointer;
-    box-sizing: border-box;
-    background-color: var(--color-day);
-    margin: 5px;
-    box-shadow: 0px 0px 3px var(--box-shadow);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 15%;
+  padding: 10px;
+  height: auto; /* Permite que a altura se ajuste conforme o conteúdo */
+  background-color: var(--color-day);
+  margin: 0; /* Remova a margem para garantir alinhamento perfeito */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px; /* Um ajuste visual */
+  box-sizing: border-box;
 }
 
 .day:hover {
-    background-color: var(--hover);
+  background-color: var(--hover);
 }
 
-.day+#currentDay {
-    background-color: var(--current-day);
+.day + #currentDay {
+  background-color: var(--current-day);
 }
 
 .event {
-    font-size: 10px;
-    padding: 3px;
-    background-color: var(--event-color);
-    color: white;
-    border-radius: 5px;
-    max-height: 55px;
-    overflow: hidden;
+  font-size: 10px;
+  padding: 3px;
+  background-color: var(--event-color);
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
 }
 
 .padding {
-    cursor: default !important;
-    background-color: var(--body-color) !important;
-    box-shadow: none !important;
+  cursor: default !important;
+  background-color: var(--body-color) !important;
+  box-shadow: none !important;
 }
 
 #viewEventModal {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  display: none;
 }
 
 #viewEventModal .close-btn {
-    cursor: pointer;
-    color: red;
-    font-size: 20px;
+  cursor: pointer;
+  color: red;
+  font-size: 20px;
 }
 
 #eventText {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 #modalBackDrop {
-    display: none;
-    top: 0px;
-    left: 0px;
-    z-index: 10;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Ajustes gerais */
 #container-schedule {
-    max-width: 100%;
-    padding: 10px;
+  max-width: 100%;
+  padding: 10px;
 }
 
 .schedule-body {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 #header {
-    padding: 10px;
-    color: var(--header-color);
-    font-size: 26px;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: space-between;
+  padding: 10px;
+  color: var(--header-color);
+  font-size: 26px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
 }
 
 #header div,
 #header button {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .schedule-body #header button {
-    background-color: var(--header-button);
-    font-size: 14px;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
+  background-color: var(--header-button);
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
 }
 
 .schedule-body button {
-    background-color: orange !important;
-    color: white;
-    border: none;
-    outline: none;
-    padding: 10px 15px;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px #0000001a;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  background-color: orange !important;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px #0000001a;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
 }
 
 .schedule-body button:hover {
-    background-color: #ffa600a7;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background-color: #ffa600a7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .schedule-body button:active {
-    transform: translateY(0);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
-    #container-schedule {
-        padding: 10px;
-    }
+  #container-schedule {
+    padding: 10px;
+  }
 
-    .schedule-body {
-        padding: 0 15px;
-    }
+  .schedule-body {
+    padding: 0 15px;
+  }
 
-    #header {
-        font-size: 20px;
-        flex-direction: column;
-        align-items: center;
-    }
+  #header {
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #header div {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding-top: 10px;
-    }
+  #header div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 10px;
+  }
 
-    #header button {
-        font-size: 12px;
-        padding: 6px 8px;
-    }
+  #header button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
 
-    /* Ajustes para alinhar dias e dias da semana */
-    #weekdays,
-    #calendar {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-    }
+  /* Ajustes para alinhar dias e dias da semana */
+  #weekdays,
+  #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
-    .schedule-body {
-        padding: 0 10px;
-    }
+  .schedule-body {
+    padding: 0 10px;
+  }
 
-    #header {
-        font-size: 18px;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-    }
+  #header {
+    font-size: 18px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
 
-    #header div {
-        width: 100%;
-        justify-content: space-around;
-        padding-top: 5px;
-    }
+  #header div {
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 5px;
+  }
 
-    #header button {
-        font-size: 10px;
-        padding: 5px 8px;
-    }
+  #header button {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
 
-    /* Ajustes para alinhar dias e dias da semana */
-    #weekdays,
-    #calendar {
-        grid-template-columns: repeat(7, minmax(0, 1fr));
-    }
+  #calendar {
+    grid-template-columns: repeat(7, 1fr); /* Garante 7 colunas */
+    grid-gap: 5px; /* Reduz o espaço entre os itens */
+  }
 
-    /* Ajuste para dias da semana com apenas a primeira letra em telas menores */
-    #weekdays div::after {
-        content: attr(data-letter);
-        font-size: 1rem;
-    }
+  #weekdays div {
+    width: auto;
+    font-size: 0.8rem; /* Ajusta o tamanho do texto nos dias da semana */
+  }
 
-    #weekdays div {
-        width: 70px;
-        padding: 5px;
-        font-size: 0;
-        /* Esconde o texto completo */
-    }
+  .day {
+    padding: 5px;
+    font-size: 0.7rem;
+  }
 }
 
 /* Dark mode */
-input[type=checkbox] {
-    height: 0;
-    width: 0;
-    visibility: hidden;
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
 }
 
 label {
-    cursor: pointer;
-    text-indent: -9999px;
-    width: 52px;
-    height: 27px;
-    background: grey;
-    float: right;
-    border-radius: 100px;
-    position: relative;
-    left: -50px;
-    transition: background-color 0.3s ease, left 0.3s ease;
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: grey;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+  left: -50px;
+  transition: background-color 0.3s ease, left 0.3s ease;
 }
 
 label::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 90px;
-    transition: 0.3s;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 90px;
+  transition: 0.3s;
 }
 
-input:checked+label {
-    background-color: rgb(142, 142, 142);
-    left: -15px;
+input:checked + label {
+  background-color: rgb(142, 142, 142);
+  left: -15px;
 }
 
-input:checked+label::after {
-    left: 25px;
+input:checked + label::after {
+  left: 25px;
 }
