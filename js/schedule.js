@@ -122,7 +122,7 @@ function displayEventIfExist(dayString, dayElement) {
 
     // Verifica o comprimento do título e aplica a truncagem
     eventDiv.innerText =
-      event.title.length > 7 ? event.title.slice(0, 7) + "..." : event.title;
+      event.title.length > 7 ? event.title.slice(0, 4) + "..." : event.title;
 
     dayElement.appendChild(eventDiv);
   }
