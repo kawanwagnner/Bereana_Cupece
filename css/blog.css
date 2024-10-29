@@ -51,23 +51,15 @@ body {
 
 /* Agenda de Eventos - Main */
 html {
-  --body-color: #fffcff;
-  --header-color: #d36c6c;
-  --header-button: #92a1d1;
-  --color-weekdays: #247ba0;
-  --box-shadow: #cbd4c2;
-  --hover: #e8faed;
-  --current-day: #e8f4fa;
-  --event-color: #58bae4;
-  --modal-event: #e8f4fa;
-  --color-day: white;
+  background-color: #fffcff;
+  color: #d36c6c;
 }
 
 .schedule-body {
   display: flex;
   margin-top: 50px;
   justify-content: center;
-  background-color: var(--body-color);
+  background-color: #282a36;
 }
 
 .schedule-body button {
@@ -83,7 +75,7 @@ html {
 
 .schedule-body #header {
   padding: 10px;
-  color: var(--header-color);
+  color: #d36c6c;
   font-size: 26px;
   font-family: sans-serif;
   display: flex;
@@ -91,31 +83,32 @@ html {
 }
 
 .schedule-body #header button {
-  background-color: var(--header-button);
+  background-color: #92a1d1;
 }
 
 #container-schedule {
   width: 770px;
+  overflow-x: auto;
 }
 
 #weekdays {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  color: var(--color-weekdays);
+  color: #247ba0;
 }
 
 #weekdays div {
-  width: 100px;
+  width: 100%;
   padding: 10px;
   text-align: center;
-  font-size: 1.2rem; /* Tamanho da letra para visualização clara */
+  font-size: 1.2rem;
   position: relative;
 }
 
 #weekdays div::before {
-  content: attr(data-letter); /* Pega o valor do atributo 'data-letter' */
-  font-size: 1.5rem; /* Ajusta o tamanho da letra para o visual desejado */
+  content: attr(data-letter);
+  font-size: 1.5rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -123,41 +116,43 @@ html {
 }
 
 #weekdays div {
-  color: var(--color-weekdays); /* Mantém a cor */
+  color: #247ba0;
 }
 
 #calendar {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* Cria 7 colunas de tamanho igual */
-  grid-gap: 10px; /* Espaçamento entre os dias */
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
 }
 
 .day {
   padding: 10px;
-  height: auto; /* Permite que a altura se ajuste conforme o conteúdo */
-  background-color: var(--color-day);
-  margin: 0; /* Remova a margem para garantir alinhamento perfeito */
+  height: 11vh;
+  background-color: #44475a;
+  color: #fff;
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border-radius: 8px; /* Um ajuste visual */
+  border-radius: 8px;
   box-sizing: border-box;
 }
 
 .day:hover {
-  background-color: var(--hover);
+  background-color: #e8faed;
+  color: #343a40;
 }
 
-.day + #currentDay {
-  background-color: var(--current-day);
+.day+#currentDay {
+  background-color: #58bae4;
 }
 
 .event {
   font-size: 10px;
   padding: 3px;
-  background-color: var(--event-color);
+  background-color: #58bae4;
   color: white;
   border-radius: 5px;
   max-height: 55px;
@@ -166,15 +161,17 @@ html {
 
 .padding {
   cursor: default !important;
-  background-color: var(--body-color) !important;
+  background-color: #282a36 !important;
   box-shadow: none !important;
 }
 
 #viewEventModal {
+  font-family: sans-serif;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+  font-weight: bold;
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -191,6 +188,7 @@ html {
 
 #eventText {
   font-size: 14px;
+  font-family: sans-serif;
 }
 
 #modalBackDrop {
@@ -204,7 +202,6 @@ html {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Ajustes gerais */
 #container-schedule {
   max-width: 100%;
   padding: 10px;
@@ -216,7 +213,7 @@ html {
 
 #header {
   padding: 10px;
-  color: var(--header-color);
+  color: #d36c6c;
   font-size: 26px;
   font-family: sans-serif;
   display: flex;
@@ -229,7 +226,7 @@ html {
 }
 
 .schedule-body #header button {
-  background-color: var(--header-button);
+  background-color: #92a1d1;
   font-size: 14px;
   padding: 8px 12px;
   border-radius: 5px;
@@ -247,8 +244,7 @@ html {
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 4px 6px #0000001a;
-  transition: background-color 0.3s ease, transform 0.2s ease,
-    box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .schedule-body button:hover {
@@ -262,7 +258,6 @@ html {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
   #container-schedule {
     padding: 10px;
@@ -290,7 +285,6 @@ html {
     padding: 6px 8px;
   }
 
-  /* Ajustes para alinhar dias e dias da semana */
   #weekdays,
   #calendar {
     display: grid;
@@ -322,13 +316,13 @@ html {
   }
 
   #calendar {
-    grid-template-columns: repeat(7, 1fr); /* Garante 7 colunas */
-    grid-gap: 5px; /* Reduz o espaço entre os itens */
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
   }
 
   #weekdays div {
     width: auto;
-    font-size: 0.8rem; /* Ajusta o tamanho do texto nos dias da semana */
+    font-size: 0.8rem;
   }
 
   .day {
@@ -337,7 +331,6 @@ html {
   }
 }
 
-/* Dark mode */
 input[type="checkbox"] {
   height: 0;
   width: 0;
@@ -369,11 +362,11 @@ label::after {
   transition: 0.3s;
 }
 
-input:checked + label {
+input:checked+label {
   background-color: rgb(142, 142, 142);
   left: -15px;
 }
 
-input:checked + label::after {
+input:checked+label::after {
   left: 25px;
 }
