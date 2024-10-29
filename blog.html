@@ -305,15 +305,15 @@
 
     <!-- Start section de agendamento -->
     <div
-      class="text-center mx-auto pb-5 wow fadeInUp"
+      class="text-center mx-auto wow fadeInUp"
       data-wow-delay="0.2s"
       style="max-width: 800px"
     >
-      <h4 class="text-uppercase text-primary-css">Nossa agenda</h4>
-      <h1 class="display-6 text-capitalize mb-3">Eventos programados:</h1>
+      <!-- <h4 class="text-uppercase text-primary-css">Nossa agenda</h4> -->
+      <h1 class="display-6 text-capitalize">Nossa agenda de Eventos:</h1>
+      <hr class="w-50 mx-auto" />
     </div>
-
-    <section class="schedule-body py-5 my-5" cz-shortcut-listen="true">
+    <section class="schedule-body py-5" cz-shortcut-listen="true">
       <!-- Container do calendário -->
       <div id="container-schedule">
         <!-- Cabeçalho com título e navegação -->
@@ -594,6 +594,39 @@
       </div>
     </section>
     <!-- END shelf books -->
+
+    <!-- Drive -->
+    <section class="one_drive">
+      <h2 class="title-drive text-center text-capitalize mt-5">
+        Confira suas fotos! Já podem <br />
+        estar disponivíes... 🥰❤️
+      </h2>
+
+      <hr class="w-25 mx-auto" />
+
+      <div class="section-one_drive">
+        <div class="ocean">
+          <div class="wave"></div>
+          <div class="wave"></div>
+        </div>
+        <div class="container-drive my-4">
+          <h2 class="title-drive">Escaneie o código QR ou abra o OneDrive</h2>
+          <img
+            class="img-drive"
+            src="https://via.placeholder.com/200"
+            alt="QR Code"
+          />
+          <br />
+          <button
+            class="button-one-drive"
+            onclick="window.open('https://onedrive.live.com', '_blank')"
+          >
+            Abrir OneDrive
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- END Drive -->
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">

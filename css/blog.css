@@ -14,7 +14,7 @@ body {
   color: #343a40;
 }
 
-.shelf-book-card {
+.shelf-book-button-one-drive {
   border: none;
 }
 
@@ -331,42 +331,182 @@ html {
   }
 }
 
-input[type="checkbox"] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
+
+/* Section DRIVE */
+.one_drive {
+  background: radial-gradient(ellipse at center,
+      #fffeea 0%,
+      #fffeea 35%,
+      #b7e8eb 100%);
+  overflow: hidden;
+  margin: 0;
 }
 
-label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 52px;
-  height: 27px;
-  background: grey;
-  float: right;
-  border-radius: 100px;
+.section-one_drive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  font-family: "Poppins", sans-serif;
   position: relative;
-  left: -50px;
-  transition: background-color 0.3s ease, left 0.3s ease;
 }
 
-label::after {
-  content: "";
+.ocean {
+  height: 5%;
+  width: 100%;
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border-radius: 90px;
-  transition: 0.3s;
+  bottom: 0;
+  left: 0;
+  background: #015871;
 }
 
-input:checked+label {
-  background-color: rgb(142, 142, 142);
-  left: -15px;
+.wave {
+  background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg) repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
 }
 
-input:checked+label::after {
-  left: 25px;
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
 }
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+.container-drive {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  z-index: 10;
+}
+
+@media screen and (max-width: 700px) {
+  .container-drive {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  hr {
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.img-drive {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  margin: 0px auto 30px auto;
+}
+
+.img-drive:hover {
+  transform: scale(1.05);
+}
+
+.button-one-drive {
+  position: relative;
+  width: 230px;
+  height: 70px;
+  background: mediumturquoise;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.button-one-drive::before,
+.button-one-drive::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: lightblue;
+  transition: all 0.5s;
+}
+
+.button-one-drive::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 100%;
+}
+
+.button-one-drive::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 15px;
+}
+
+.button-one-drive:hover::before,
+.button-one-drive:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.button-one-drive:hover:after {
+  content: "Demorou!";
+}
+
+.title-drive {
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+/* END Section DRIVE */
