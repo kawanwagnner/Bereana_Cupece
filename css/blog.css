@@ -14,16 +14,15 @@ body {
   color: #343a40;
 }
 
-.shelf-book-button-one-drive {
-  border: none;
-}
-
 .book-cover {
-  width: 200px;
-  height: 200px;
-  margin: auto;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
+}
+
+.card.shelf-book-card {
+  margin-bottom: 20px;
 }
 
 .book-title {
@@ -47,7 +46,38 @@ body {
   border-color: #0056b3;
 }
 
-/* FIM prateleira de Livros CSS */
+/* Configurações do Carrossel */
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item .row .col-12 {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 575.98px) {
+  /* Ajustes para celulares */
+  .card.shelf-book-card {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Ajustes para tablets */
+  .card.shelf-book-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Ajustes para desktops */
+  .card.shelf-book-card {
+    margin-bottom: 25px;
+  }
+}
+
+/* Fim do CSS */
 
 /* Agenda de Eventos - Main */
 html {
@@ -145,7 +175,7 @@ html {
   color: #343a40;
 }
 
-.day+#currentDay {
+.day + #currentDay {
   background-color: #58bae4;
 }
 
@@ -191,17 +221,6 @@ html {
   font-family: sans-serif;
 }
 
-#modalBackDrop {
-  display: none;
-  top: 0px;
-  left: 0px;
-  z-index: 10;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
 #container-schedule {
   max-width: 100%;
   padding: 10px;
@@ -244,7 +263,8 @@ html {
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 4px 6px #0000001a;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
 }
 
 .schedule-body button:hover {
@@ -331,13 +351,14 @@ html {
   }
 }
 
-
 /* Section DRIVE */
 .one_drive {
-  background: radial-gradient(ellipse at center,
-      #fffeea 0%,
-      #fffeea 35%,
-      #b7e8eb 100%);
+  background: radial-gradient(
+    ellipse at center,
+    #fffeea 0%,
+    #fffeea 35%,
+    #b7e8eb 100%
+  );
   overflow: hidden;
   margin: 0;
 }
@@ -362,7 +383,8 @@ html {
 }
 
 .wave {
-  background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg) repeat-x;
+  background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg)
+    repeat-x;
   position: absolute;
   top: -198px;
   width: 6400px;
@@ -389,7 +411,6 @@ html {
 }
 
 @keyframes swell {
-
   0%,
   100% {
     transform: translate3d(0, -25px, 0);

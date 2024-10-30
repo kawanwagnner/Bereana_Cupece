@@ -354,19 +354,6 @@
           <br />
           <button id="closeButton">Fechar</button>
         </div>
-
-        <!-- Modal para Visualizar ou Deletar Evento -->
-        <div id="deleteEventModal" style="display: none">
-          <!-- Adicionando display:none por padrão -->
-          <h2>Evento</h2>
-          <div id="eventText"></div>
-          <br />
-          <button id="deleteButton">Deletar</button>
-          <button id="closeButton">Fechar</button>
-        </div>
-
-        <!-- Backdrop para o modal -->
-        <div id="modalBackDrop" style="display: none"></div>
       </div>
     </section>
     <!-- END section de agendamento -->
@@ -488,116 +475,166 @@
           Obras Autorais
         </h1>
       </div>
-      <div class="row g-4 justify-content-center">
-        <!-- Livro 1 -->
-        <div class="col-md-4">
-          <div class="card shelf-book-card">
-            <img
-              src="img/blog/guia1.png"
-              class="card-img-top book-cover"
-              alt="Livro 1"
-            />
-            <div class="card-body text-center">
-              <h5 class="book-title">Guia 1 - Conhecer</h5>
-              <p class="book-description">Uma breve descrição do livro 1.</p>
-              <a href="#" class="btn btn-primary buy-button" target="_blank"
-                >Adquirir gratuitamente</a
-              >
+
+      <!-- Início do Carrossel -->
+      <div
+        id="bookCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="2000"
+      >
+        <!-- Itens do Carrossel -->
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row">
+              <!-- Livro 1 -->
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="card shelf-book-card">
+                  <img
+                    src="img/blog/guia1.png"
+                    class="card-img-top book-cover"
+                    alt="Livro 1"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="book-title">Guia 1 - Conhecer</h5>
+                    <p class="book-description">
+                      Uma breve descrição do livro 1.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-primary buy-button"
+                      target="_blank"
+                      >Adquirir gratuitamente</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Livro 2 -->
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="card shelf-book-card">
+                  <img
+                    src="img/blog/guia2.png"
+                    class="card-img-top book-cover"
+                    alt="Livro 2"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="book-title">Guia 2 - Submeter</h5>
+                    <p class="book-description">
+                      Uma breve descrição do livro 2.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-primary buy-button"
+                      target="_blank"
+                      >Adquirir gratuitamente</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Livro 3 -->
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="card shelf-book-card">
+                  <img
+                    src="img/blog/guia3.png"
+                    class="card-img-top book-cover"
+                    alt="Livro 3"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="book-title">Guia 3 - Absurdo</h5>
+                    <p class="book-description">
+                      Uma breve descrição do livro 3.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-primary buy-button"
+                      target="_blank"
+                      >Adquirir gratuitamente</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Livro 2 -->
-        <div class="col-md-4">
-          <div class="card shelf-book-card">
-            <img
-              src="img/blog/guia2.png"
-              class="card-img-top book-cover"
-              alt="Livro 2"
-            />
-            <div class="card-body text-center">
-              <h5 class="book-title">Guia 2 - Submeter</h5>
-              <p class="book-description">Uma breve descrição do livro 2.</p>
-              <a href="#" class="btn btn-primary buy-button" target="_blank"
-                >Adquirir gratuitamente</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Livro 3 -->
-        <div class="col-md-4">
-          <div class="card shelf-book-card">
-            <img
-              src="img/blog/guia3.png"
-              class="card-img-top book-cover"
-              alt="Livro 3"
-            />
-            <div class="card-body text-center">
-              <h5 class="book-title">Guia 3 - Absurdo</h5>
-              <p class="book-description">Uma breve descrição do livro 3.</p>
-              <a href="#" class="btn btn-primary buy-button" target="_blank"
-                >Adquirir gratuitamente</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Livro 4 -->
-        <div class="col-md-4">
-          <div class="card shelf-book-card">
-            <img
-              src="img/blog/guia4.png"
-              class="card-img-top book-cover"
-              alt="Livro 2"
-            />
-            <div class="card-body text-center">
-              <h5 class="book-title">Guia 4 - Volência</h5>
-              <p class="book-description">Uma breve descrição do livro 2.</p>
-              <a href="#" class="btn btn-primary buy-button" target="_blank"
-                >Adquirir gratuitamente</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Livro 5 -->
-        <div class="col-md-4">
-          <div class="card shelf-book-card">
-            <img
-              src="img/blog/nos-louco.png"
-              class="card-img-top book-cover"
-              alt="Livro 1"
-            />
-            <div class="card-body text-center">
-              <h5 class="book-title">Nós Louco</h5>
-              <p class="book-description">Uma breve descrição do livro 1.</p>
-              <a href="#" class="btn btn-primary buy-button" target="_blank"
-                >Adquirir gratuitamente</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Livro 6 -->
-        <div class="col-md-4">
-          <div class="card shelf-book-card">
-            <img
-              src="img/blog/louco.png"
-              class="card-img-top book-cover"
-              alt="Livro 1"
-            />
-            <div class="card-body text-center">
-              <h5 class="book-title">Louco</h5>
-              <p class="book-description">Uma breve descrição do livro 1.</p>
-              <a href="#" class="btn btn-primary buy-button" target="_blank"
-                >Adquirir gratuitamente</a
-              >
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row">
+              <!-- Livro 4 -->
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="card shelf-book-card">
+                  <img
+                    src="img/blog/guia4.png"
+                    class="card-img-top book-cover"
+                    alt="Livro 4"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="book-title">Guia 4 - Violência</h5>
+                    <p class="book-description">
+                      Uma breve descrição do livro 4.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-primary buy-button"
+                      target="_blank"
+                      >Adquirir gratuitamente</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Livro 5 -->
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="card shelf-book-card">
+                  <img
+                    src="img/blog/nos-louco.png"
+                    class="card-img-top book-cover"
+                    alt="Livro 5"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="book-title">Nós Loucos</h5>
+                    <p class="book-description">
+                      Uma breve descrição do livro 5.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-primary buy-button"
+                      target="_blank"
+                      >Adquirir gratuitamente</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Livro 6 -->
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="card shelf-book-card">
+                  <img
+                    src="img/blog/louco.png"
+                    class="card-img-top book-cover"
+                    alt="Livro 6"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="book-title">Louco</h5>
+                    <p class="book-description">
+                      Uma breve descrição do livro 6.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-primary buy-button"
+                      target="_blank"
+                      >Adquirir gratuitamente</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <button class="btn btn-primary-color mx-auto d-block">
+        Ver todos os livros
+      </button>
+      <!-- Fim do Carrossel -->
     </section>
+
     <!-- END shelf books -->
 
     <!-- Drive -->
@@ -796,6 +833,5 @@
     <!-- Template Javascript -->
     <script src="js/main.js" defer></script>
     <script src="js/schedule.js" defer></script>
-    <script src="js/darkMode.js" defer></script>
   </body>
 </html>
