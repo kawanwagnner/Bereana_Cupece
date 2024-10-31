@@ -7,6 +7,7 @@ body {
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
+  height: auto;
 }
 
 .bookshelf-title {
@@ -482,6 +483,7 @@ html {
   border-radius: 15px;
   cursor: pointer;
   margin: auto;
+  overflow: hidden;
 }
 
 .button-one-drive::before,
