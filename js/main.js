@@ -23,7 +23,7 @@
     }
   });
 
-  // testimonial carousel
+  // Testimonial carousel
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
     smartSpeed: 1500,
@@ -38,21 +38,11 @@
     ],
     responsiveClass: true,
     responsive: {
-      0: {
-        items: 1,
-      },
-      576: {
-        items: 1,
-      },
-      768: {
-        items: 1,
-      },
-      992: {
-        items: 2,
-      },
-      1200: {
-        items: 2,
-      },
+      0: { items: 1 },
+      576: { items: 1 },
+      768: { items: 1 },
+      992: { items: 2 },
+      1200: { items: 2 },
     },
   });
 
@@ -73,5 +63,13 @@
   $(".back-to-top").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
     return false;
+  });
+
+  // Alert ao clicar em elementos com a classe .working-in-upgrade
+  $(document).on("click", ".working-in-upgrade", function (e) {
+    e.preventDefault();
+    alert(
+      "🚧 Estamos trabalhando para melhorar sua experiência! 🚀 Aguarde novidades em breve! 😉"
+    );
   });
 })(jQuery);
