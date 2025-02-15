@@ -4,9 +4,6 @@ let clicked = null;
 let events = [];
 
 // Referências do DOM
-const newEventModal = document.getElementById("newEventModal");
-const deleteEventModal = document.getElementById("deleteEventModal");
-const backDrop = document.getElementById("modalBackDrop");
 const eventTitleInput = document.getElementById("eventTitleInput");
 const calendar = document.getElementById("calendar");
 const monthDisplay = document.getElementById("monthDisplay");
@@ -150,7 +147,6 @@ function handleDayClick(dayString) {
 function openEventModal(event) {
   eventText.innerText = event.title;
   viewEventModal.style.display = "block";
-  backDrop.style.display = "block";
   centerModal(viewEventModal);
 }
 
@@ -162,14 +158,8 @@ function centerModal(modal) {
 // Fechar o modal
 closeButton.addEventListener("click", closeEventModal);
 
-// Fechar modal ao clicar fora dele
-backDrop.addEventListener("click", (e) => {
-  if (e.target === backDrop) closeEventModal();
-});
-
 function closeEventModal() {
   viewEventModal.style.display = "none";
-  backDrop.style.display = "none";
 }
 
 // Navegação entre meses
