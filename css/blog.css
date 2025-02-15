@@ -2,6 +2,17 @@ body {
   overflow-x: hidden;
 }
 
+@media screen and (max-width: 992px) {
+  .gap_top {
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
+
+  .gap_bottom {
+    padding-bottom: 10px;
+  }
+}
+
 /* Prateleira de Livros CSS */
 .digital-bookshelf {
   background-color: #fff;
@@ -58,6 +69,7 @@ body {
 }
 
 @media (max-width: 575.98px) {
+
   /* Ajustes para celulares */
   .card.shelf-book-card {
     margin-bottom: 15px;
@@ -65,6 +77,7 @@ body {
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
+
   /* Ajustes para tablets */
   .card.shelf-book-card {
     margin-bottom: 20px;
@@ -72,6 +85,7 @@ body {
 }
 
 @media (min-width: 768px) {
+
   /* Ajustes para desktops */
   .card.shelf-book-card {
     margin-bottom: 25px;
@@ -176,7 +190,7 @@ html {
   color: #343a40;
 }
 
-.day + #currentDay {
+.day+#currentDay {
   background-color: #58bae4;
 }
 
@@ -354,12 +368,10 @@ html {
 
 /* Section DRIVE */
 .one_drive {
-  background: radial-gradient(
-    ellipse at center,
-    #fffeea 0%,
-    #fffeea 35%,
-    #b7e8eb 100%
-  );
+  background: radial-gradient(ellipse at center,
+      #fffeea 0%,
+      #fffeea 35%,
+      #b7e8eb 100%);
   overflow: hidden;
   margin: 0;
 }
@@ -384,8 +396,7 @@ html {
 }
 
 .wave {
-  background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg)
-    repeat-x;
+  background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg) repeat-x;
   position: absolute;
   top: -197px;
   width: 6400px;
@@ -412,6 +423,7 @@ html {
 }
 
 @keyframes swell {
+
   0%,
   100% {
     transform: translate3d(0, -25px, 0);
