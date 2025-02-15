@@ -364,9 +364,9 @@ html {
 .wave {
   background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg) repeat-x;
   position: absolute;
-  top: -198px;
+  top: -197px;
   width: 6400px;
-  height: 198px;
+  height: 200px;
   animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
