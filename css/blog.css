@@ -2,6 +2,10 @@ body {
   overflow-x: hidden;
 }
 
+.font-size {
+  font-size: 8px;
+}
+
 @media screen and (max-width: 992px) {
   .gap_top {
     padding-top: 40px;
